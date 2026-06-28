@@ -1,14 +1,14 @@
-"""Streamlit entry point — a thin UI over the pdx_kids_activities package.
+"""Streamlit entry point — a thin UI over the kids_activities_finder package.
 
 Run with:  poetry run streamlit run app.py
 """
 
 import streamlit as st
 
-st.set_page_config(page_title="PDX Kids Activities", page_icon="🧸")
+st.set_page_config(page_title="Kids Activities Finder", page_icon="🧸")
 
-st.title("🧸 PDX Kids Activities")
-st.caption("Find toddler-friendly activities near you over the next few days.")
+st.title("🧸 Kids Activities Finder")
+st.caption("Find kid-friendly activities near you over the next few days.")
 
 st.info(
     "🚧 Just getting started. Next up: location input, the search engine, "

@@ -1,4 +1,4 @@
-from pdx_kids_activities.models import Activity
+from kids_activities_finder.models import Activity
 
 
 def test_activity_minimal():

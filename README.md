@@ -1,8 +1,11 @@
-# 🧸 PDX Kids Activities
+# 🧸 Kids Activities Finder
 
-Find toddler-friendly activities happening **near you** over the next few days
-(today / tomorrow / day-after) in the Portland, OR metro area — library story times,
-park & rec programs, museum/zoo events, festivals, and community happenings.
+Find kid-friendly activities happening **near you** over the next few days
+(today / tomorrow / day-after) — library story times, park & rec programs, museum/zoo
+events, festivals, and community happenings.
+
+The app is **location-agnostic** by design. The first supported region is the
+**Portland, OR metro area**; more regions/sources can be added over time.
 
 > You enter only an **approximate** location (ZIP, neighborhood, or street — never a full
 > address). Nothing is stored.
@@ -49,7 +52,7 @@ poetry run pytest           # run tests
 
 ```
 app.py                    # Streamlit entry point (thin UI)
-pdx_kids_activities/      # reusable logic package (no UI)
+kids_activities_finder/   # reusable logic package (no UI)
   models.py               # Activity data model
   ...                     # geocoding, distance, sources, search (added incrementally)
 tests/

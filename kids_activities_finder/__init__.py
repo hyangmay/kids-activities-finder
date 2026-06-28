@@ -1,4 +1,4 @@
-"""PDX Kids Activities — reusable logic package (no UI).
+"""Kids Activities Finder — reusable logic package (no UI).
 
 The Streamlit app (``app.py``) is a thin presentation layer over this package, so the
 frontend can be swapped later (e.g. FastAPI) without touching the data/logic code.
