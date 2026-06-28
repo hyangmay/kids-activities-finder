@@ -1,0 +1,29 @@
+[project]
+name = "pdx-kids-activities"
+version = "0.1.0"
+description = "Find toddler-friendly activities near you in the Portland, OR area, over the next few days."
+authors = [{ name = "Haizhu Yang", email = "hyangmay555@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "streamlit (>=1.40,<2.0)",
+    "requests (>=2.32,<3.0)",
+    "geopy (>=2.4,<3.0)",
+    "beautifulsoup4 (>=4.12,<5.0)",
+    "lxml (>=5.0,<6.0)",
+    "python-dateutil (>=2.9,<3.0)",
+]
+
+[tool.poetry]
+# Application (not a distributable library): Poetry manages the venv + deps,
+# but does not try to build/install this project as a package.
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Add the project root to sys.path so tests can import the package without
+# installing it (we run in application / package-mode = false).
+pythonpath = ["."]
