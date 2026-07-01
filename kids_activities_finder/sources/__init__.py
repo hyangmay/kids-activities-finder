@@ -8,16 +8,29 @@ the adapters); the core search/UI code doesn't change.
 from __future__ import annotations
 
 from .base import Source
-from .sample import REGION as PORTLAND, SampledPortlandSource
+from .bibliocommons import BiblioCommonsSource
 
-# Maps a region name -> the sources that cover it.
-#
-# Today this holds only a placeholder sample source for Portland (real Portland sites are
-# JS-rendered with no stable feeds, so each real adapter is a separate effort). Real
-# sources get appended to the Portland list as they're built; the sample is removed once
-# at least one real source is live.
+PORTLAND = "Portland, OR"
+
+
+def _wccls() -> BiblioCommonsSource:
+    """Washington County Cooperative Library Services (BiblioCommons).
+
+    One feed covering Beaverton, Tigard, Tualatin, Hillsboro, and ~a dozen more
+    Portland-metro branches.
+    """
+    return BiblioCommonsSource(
+        slug="wccls",
+        name="Washington County libraries (WCCLS)",
+        region=PORTLAND,
+        event_base_url="https://wccls.bibliocommons.com/events",
+    )
+
+
+# Maps a region name -> the sources that cover it. Real adapters get appended here as
+# they're built; adding a new city means adding its sources without touching the core.
 _REGISTRY: dict[str, list[Source]] = {
-    PORTLAND: [SampledPortlandSource()],
+    PORTLAND: [_wccls()],
 }
 
 #: The default region until users can pick their own (see CLAUDE.md "still open").
